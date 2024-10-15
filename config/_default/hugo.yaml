@@ -2,6 +2,7 @@ title: Blog
 description: Personal blog
 baseURL: http://localhost:9000
 minify: false
+pluralizelisttitles: false
 disableKinds:
   - sitemap
   - robotsTXT

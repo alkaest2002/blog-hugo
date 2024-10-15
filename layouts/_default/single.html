@@ -1,10 +1,5 @@
 {{- define "main" }}
-<div class="h-full">
-    <div class="h-full flex flex-col items-center justify-center p-9 relative">
-        <div class="flex-grow w-full">
-            <h1 class="text-xl font-bold mb-9">BASE SINGLE {{ .Title }}</h1>
-            <div class="mb-9">{{ .Content }}</div>
-        </div>
-    </div>
+<div class="flex-grow w-full">
+    <div>{{ .Content }}</div>
 </div>
 {{- end }}

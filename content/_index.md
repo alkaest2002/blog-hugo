@@ -1,4 +1,4 @@
 ---
-title: Pagina iniziale
+title: Home
 ---
 Benvenuto nella pagina iniziale.

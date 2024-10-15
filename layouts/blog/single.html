@@ -1,22 +1,11 @@
 {{- define "main" }}
-<div class="h-full">
-    <div class="h-full flex flex-col items-center justify-center p-9 relative">
-        <div class="flex-grow w-full">
-            <h1 class="text-xl font-bold mb-9">{{ .Title }}</h1>
-            <div class="mb-9">{{ .Content }}</div>
-            {{- with .GetTerms "tags" }}
-            <p class="text-xl mb-12">Tags</p>
-            <ul>
-                {{- range . }}
-                <li>
-                    <a class="text-blue-500" href="{{ .RelPermalink }}"
-                        >{{ .LinkTitle }}</a
-                    >
-                </li>
-                {{- end }}
-            </ul>
-            {{- end }}
-        </div>
-    </div>
+<div class="flex-grow w-full">
+    <h1 class="text-xl font-bold mb-9">{{ .Title }}</h1>
+    <div class="mb-9">{{ .Content }}</div>
+    {{- with .GetTerms "tags" }}
+    <p class="text-md mb-3">Tags</p>
+    {{- range . }}
+    <a class="text-blue-500" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+    {{- end }} {{- end }}
 </div>
 {{- end }}
