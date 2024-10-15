@@ -2,9 +2,9 @@
 title: Long title for my second post
 linkTitle: My second Post
 date: 2024-10-15
-categories: computer
+categories: data-science
 tags:
+  - javascript
   - python
-  - dev
 ---
 {{< base/lorem count=8 >}}
