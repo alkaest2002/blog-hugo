@@ -1,0 +1,8 @@
+title: Blog
+description: Personal blog
+baseURL: http://localhost:9000
+minify: false
+disableKinds:
+  - sitemap
+  - robotsTXT
+  - RSS

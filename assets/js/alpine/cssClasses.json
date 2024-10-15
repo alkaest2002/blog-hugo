@@ -1,0 +1,57 @@
+{
+  "display": {
+    "hidden": {
+      "hidden": true
+    },
+    "inline": {
+      "inline": true
+    },
+    "block": {
+      "block": true
+    },
+    "inline-block": {
+      "inline-block": true
+    },
+    "opacity-20": {
+      "opacity-20": true
+    }
+  },
+  "selected": { 
+    "bg-blue-50": true, 
+    "hover:bg-blue-50": true,
+    "border": true,
+    "border-border-transparent": true 
+  },
+  "selectedWithRing": { 
+    "border": true,
+    "border-blue-500": true
+  },
+  "nonSelected": { 
+    "border": true,
+    "border-border-transparent": true 
+  },
+  "nonSelectable": {
+    "opacity-50": true,
+    "cursor-not-allowed": true
+  },
+  "disabledButton": {
+    "bg-gray-200": true,
+    "cursor-not-allowed": true,
+    "outline-none": true
+  },
+  "enabledButton": {
+    "bg-blue-500": true,
+    "hover:bg-blue-700": true,
+    "cursor-pointer": true
+  },
+  "grayDot": {
+    "text-gray-200": true
+  },
+  "orangeDot": {
+    "text-orange-300": true
+  },
+  "blueDot": {
+    "text-blue-400": true
+  }
+ 
+}

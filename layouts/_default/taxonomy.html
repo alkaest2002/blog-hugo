@@ -1,0 +1,20 @@
+{{- define "main" }}
+<div class="h-full flex flex-col items-center justify-center p-9 relative">
+    <div class="flex-grow flex flex-col w-full">
+        <div class="flex-grow w-full">
+            <h1 class="text-xl font-bold mb-9">BASE TAXONOMY {{ .Title }}</h1>
+            <div class="mb-9">{{ .Content }}</div>
+            <div>
+                {{ range .Data.Terms.ByCount }}
+                <h2>
+                    <a class="text-blue-500" href="{{ .Page.RelPermalink }}"
+                        >{{ .Page.LinkTitle }}</a
+                    >
+                    ({{ .Count }})
+                </h2>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{- end }}
