@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html {
+	scroll-behavior: smooth;
+}
+
 input:focus,
 select:focus,
 textarea:focus,

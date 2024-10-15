@@ -12,7 +12,7 @@
         x-data="viewBase"
         x-init="initBase({{ hugo.IsDevelopment }})"
         x-bind="htmxEvents"
-        class="h-dvh container"
+        class="h-dvh max-w-screen-xl mx-auto"
     >
         {{- partial "base/navbar" . }}
         {{- partial "base/breadcrumbs" . }}

@@ -1,4 +1,6 @@
-lastmod:
-  - :git
-  - :fileModTime
-  - :default
+date:
+  - date
+  - publishdate
+  - pubdate
+  - published
+  - modified
