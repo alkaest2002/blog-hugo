@@ -35,7 +35,7 @@
             {{ with .Site.RegularPages.Related $opts | first 5 }}
             <div class="mt-3 py-3">
                 <p class="text-md font-semibold my-3">Articoli simili</p>
-                <ul>
+                <ul class="list-disc list-inside">
                     {{ range . }}
                     <li><a class="text-blue-600" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
                     {{ end }}

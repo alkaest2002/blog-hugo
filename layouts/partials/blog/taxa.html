@@ -1,0 +1,6 @@
+<p class="font-bold mb-3">{{ .taxaLabel }}</p>
+{{- $taxa := .currentPage.Site.GetPage "taxonomy" .taxaType }}
+{{- range $taxa.Pages.ByTitle }}
+  {{- partialCached "blog/item-with-count"
+    (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}
+{{- end }}

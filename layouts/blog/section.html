@@ -1,32 +1,25 @@
 {{- define "main" }}
+{{ $currentPage := . }}
 {{ $pages := .Pages.ByDate.Reverse }}
-{{ $paginator := .Paginate $pages 8 }}
+{{ $paginator := .Paginate $pages 1 }}
 <div class="flex-grow w-full">
     <div class="mb-9">
         {{- range $paginator.Pages }}
-            {{- partial "blog/post" . }}
+            {{- partialCached "blog/post" . .RelPermalink }}
         {{- end }}
         {{- partial "base/paginator" $paginator }}
     </div>
     <div class="flex flex-wrap gap-10">
         {{- with .Site.Taxonomies.categories }}
-        <div class="grow">
-            <p class="font-bold mb-3">Categorie</p>
-            {{- $categories := $.Site.GetPage "taxonomyTerm" "categories" }}
-            {{- range $categories.Pages.ByTitle }}
-                {{- partialCached "blog/item-with-count"
-                    (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}
-            {{- end }}
-        </div>
+            <div class="grow">
+                {{- partialCached "blog/taxa"
+                    (dict "currentPage" $currentPage "taxaType" "categories" "taxaLabel" "Categorie") "taxaCategories" }}
+            </div>
         {{- end }}
         {{- with .Site.Taxonomies.tags }}
             <div class="grow">
-                <p class="font-bold mb-3">Tags</p>
-                {{- $tags := $.Site.GetPage "taxonomyTerm" "tags" }}
-                {{- range $tags.Pages.ByTitle }}
-                    {{- partialCached "blog/item-with-count"
-                        (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}
-                {{- end }}
+                {{- partialCached "blog/taxa"
+                    (dict "currentPage" $currentPage "taxaType" "tags" "taxaLabel" "Tags") "taxaTags" }}
             </div>
         {{- end }}
     </div>
