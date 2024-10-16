@@ -1,5 +1,5 @@
 ---
-title: Long title for post 1
+title: Long title for post 0001
 linkTitle: Post 1
 date: 2024-10-14
 categories: computer

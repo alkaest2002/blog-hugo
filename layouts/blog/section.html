@@ -1,7 +1,7 @@
 {{- define "main" }}
 <div class="flex-grow w-full">
     <div class="mb-9">
-        {{- range .RegularPages }}
+        {{- range .RegularPages.ByDate.Reverse }}
             {{- partialCached "blog/post" . . }}
         {{- end }}
     </div>
