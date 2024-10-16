@@ -1,7 +1,7 @@
 ---
-title: Long title for post 0004
-linkTitle: Post 4
-date: 2024-10-15
+title: Long title for post 0006
+linkTitle: Post 6
+date: 2024-10-17
 categories: psychology
 tags:
   - psychopathology

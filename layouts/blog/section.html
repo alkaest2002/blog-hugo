@@ -1,8 +1,8 @@
 {{- define "main" }}
 <div class="flex-grow w-full">
     <div class="mb-9">
-        {{- range .RegularPages.ByDate.Reverse }}
-            {{- partialCached "blog/post" . . }}
+        {{- range .Pages.ByDate.Reverse }}
+            {{- partial "blog/post" .  }}
         {{- end }}
     </div>
     <div class="flex flex-wrap gap-10">
