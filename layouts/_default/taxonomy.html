@@ -2,14 +2,8 @@
 <div class="flex-grow w-full">
     <div class="mb-9">{{ .Content }}</div>
     {{ range .Data.Terms }}
-        <div class="flex gap-3">
-            <div class="pr-3">
-                {{ .Count }}
-            </div>
-            <div class="pl-3">
-                <a class="text-blue-600" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
-            </div>
-        </div>
+        {{- partialCached "blog/item-with-count"
+            (dict "itemCount" (.Count) "itemLink" .Page.RelPermalink "itemTitle" .Page.LinkTitle) .Page.RelPermalink }}
     {{ end }}
 </div>
 {{- end }}

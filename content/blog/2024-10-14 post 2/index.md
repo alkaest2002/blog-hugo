@@ -1,6 +1,6 @@
 ---
-title: Long title for my first Post
-linkTitle: My first Post
+title: Long title for post 1
+linkTitle: Post 1
 date: 2024-10-14
 categories: computer
 tags:

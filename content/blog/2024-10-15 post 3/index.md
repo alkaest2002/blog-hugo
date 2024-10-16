@@ -1,7 +1,7 @@
 ---
-title: Long title for my second post
-linkTitle: My second Post
-date: 2024-10-15
+title: Long title for post 3
+linkTitle: Post 3
+date: 2024-10-16
 categories: data-science
 tags:
   - javascript

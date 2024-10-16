@@ -4,7 +4,7 @@
       <div class="flex items-center">
         {{- with .Site.GetPage "home" }}
           <a
-            href="{{ .Permalink }}"
+            href="{{ .RelPermalink }}"
             class="text-sm font-medium text-gray-500 hover:text-gray-700">{{ .LinkTitle }}</a>
         {{- end }}
       </div>
@@ -24,7 +24,7 @@
             clip-rule="evenodd" />
         </svg>
         <a
-          href="{{ .Permalink }}"
+          href="{{ .RelPermalink }}"
           class="text-sm font-medium text-gray-500 hover:text-gray-700">{{ .LinkTitle }}</a>
       </div>
     </li>
@@ -44,7 +44,7 @@
               clip-rule="evenodd" />
           </svg>
           <a
-            href="{{ .Permalink }}"
+            href="{{ .RelPermalink }}"
             class="text-sm font-medium text-gray-500 hover:text-gray-700">{{ .LinkTitle }}</a>
         </div>
       </li>

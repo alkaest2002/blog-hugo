@@ -8,25 +8,23 @@
     <div class="flex flex-wrap gap-10">
         {{- with .Site.Taxonomies.categories }}
         <div class="grow">
-            <p class="font-bold">Categorie</p>
+            <p class="font-bold mb-3">Categorie</p>
             {{- $categories := $.Site.GetPage "taxonomyTerm" "categories" }}
             {{- range $categories.Pages.ByTitle }}
-            <div class="py-2 border-b border-slate-200">
-                <a class="text-blue-600" href="{{.Permalink}}">{{.Title}} ({{ len .Pages }})</a>
-            </div>
+                {{- partialCached "blog/item-with-count"
+                    (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}
             {{- end }}
         </div>
         {{- end }}
         {{- with .Site.Taxonomies.tags }}
-        <div class="grow">
-            <p class="font-bold">Tags</p>
-            {{ $tags := $.Site.GetPage "taxonomyTerm" "tags" }}
-            {{- range $tags.Pages.ByTitle }}
-            <div class="py-2 border-b border-slate-200">
-                <a class="text-blue-600" href="{{.Permalink}}">{{.Title}} ({{ len .Pages }})</a>
+            <div class="grow">
+                <p class="font-bold mb-3">Tags</p>
+                {{ $tags := $.Site.GetPage "taxonomyTerm" "tags" }}
+                {{- range $tags.Pages.ByTitle }}
+                    {{- partialCached "blog/item-with-count"
+                        (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}
+                {{- end }}
             </div>
-            {{- end }}
-        </div>
         {{- end }}
     </div>
 </div>
