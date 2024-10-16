@@ -1,10 +1,10 @@
 ---
-title: Long title for post 0006
-linkTitle: Post 6
-date: 2024-10-17
+title: Long title for post 0010
+linkTitle: Post 10
+date: 2024-10-16
 categories: psychology
 tags:
   - psychopathology
-  - depression
+  - mania
 ---
 {{< base/lorem count=8 >}}

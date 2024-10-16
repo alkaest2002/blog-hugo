@@ -1,9 +1,12 @@
 {{- define "main" }}
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $paginator := .Paginate $pages 8 }}
 <div class="flex-grow w-full">
     <div class="mb-9">
-        {{- range .Pages.ByDate.Reverse }}
-            {{- partial "blog/post" .  }}
+        {{- range $paginator.Pages }}
+            {{- partial "blog/post" . }}
         {{- end }}
+        {{- partial "base/paginator" $paginator }}
     </div>
     <div class="flex flex-wrap gap-10">
         {{- with .Site.Taxonomies.categories }}
@@ -19,7 +22,7 @@
         {{- with .Site.Taxonomies.tags }}
             <div class="grow">
                 <p class="font-bold mb-3">Tags</p>
-                {{ $tags := $.Site.GetPage "taxonomyTerm" "tags" }}
+                {{- $tags := $.Site.GetPage "taxonomyTerm" "tags" }}
                 {{- range $tags.Pages.ByTitle }}
                     {{- partialCached "blog/item-with-count"
                         (dict "itemCount" (len .Pages) "itemLink" .RelPermalink "itemTitle" .LinkTitle) .RelPermalink }}

@@ -1,6 +1,6 @@
 ---
-title: Long title for post 0007
-linkTitle: Post 7
+title: Long title for post 0002
+linkTitle: Post 2
 date: 2024-10-18
 categories: computer
 tags:

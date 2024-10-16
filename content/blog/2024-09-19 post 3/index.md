@@ -1,10 +1,10 @@
 ---
 title: Long title for post 0003
 linkTitle: Post 3
-date: 2024-10-15
-categories: data-science
+date: 2024-09-19
+categories: psychology
 tags:
-  - javascript
-  - python
+  - psychopathology
+  - anxiety
 ---
 {{< base/lorem count=8 >}}
