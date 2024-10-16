@@ -1,7 +1,7 @@
 {{- define "main" }}
 {{ $currentPage := . }}
 {{ $pages := .Pages.ByDate.Reverse }}
-{{ $paginator := .Paginate $pages 1 }}
+{{ $paginator := .Paginate $pages 2 }}
 <div class="flex-grow w-full">
     <div class="mb-9">
         {{- range $paginator.Pages }}
