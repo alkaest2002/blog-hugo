@@ -6,6 +6,7 @@ pluralizelisttitles: false
 timeZone: Europe/Rome
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
 
 minify: false
 disableKinds:

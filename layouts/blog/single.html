@@ -3,7 +3,7 @@
     <div class="mb-6">
         <h1 class="text-xl font-bold">{{ .Title }}</h1>
         <span class="text-sm text-gray-500">
-            Tempo di lettura stimato: {{ .ReadingTime }} minut{{- if eq 1 .ReadingTime }}o{{- else }}i{{- end }}
+            {{ T "readingTime" .ReadingTime }}
         </span>
     </div>
     <div class="flex flex-row gap-10">

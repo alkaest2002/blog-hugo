@@ -1,0 +1,5 @@
+next: successivo
+previous: precedente
+readingTime:
+  one: "Tempo stimato di lettura: {{ . }} minuto"
+  other: "Tempo stimato di lettura: {{ . }} minuti"

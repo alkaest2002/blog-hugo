@@ -1,13 +1,13 @@
 {{- $activePager := .activePager }}
 {{- $pager := .pager }}
 {{- if eq $pager.PageNumber $activePager.PageNumber }}
-<a href="{{ $pager.URL }}"
-  class="inline-flex items-center border-t-2 border-indigo-500  px-4 pt-4 text-sm font-medium  text-indigo-600 hover:border-gray-300 hover:text-gray-700">
-  {{ $pager.PageNumber }}
-</a>
+  <a href="{{ $pager.URL }}"
+    class="inline-flex items-center border-t-2 border-blue-500  px-4 pt-4 text-sm font-medium  text-blue-600 hover:border-gray-300 hover:text-gray-700">
+    {{ $pager.PageNumber }}
+  </a>
 {{- else }}
-<a href="{{ $pager.URL }}"
-  class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-  {{ $pager.PageNumber }}
-</a>
+  <a href="{{ $pager.URL }}"
+    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+    {{ $pager.PageNumber }}
+  </a>
 {{- end }}

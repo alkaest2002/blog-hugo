@@ -1,0 +1,5 @@
+next: next
+previous: previous
+readingTime:
+  one: "Estimated reading time: {{ . }} minute"
+  other: "Estimated reading time: {{ . }} minutes"

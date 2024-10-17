@@ -7,4 +7,4 @@ tags:
   - psicopatologia
   - depressione
 ---
-{{< base/lorem count=8 >}}
+{{< base/lorem count=2 >}}
