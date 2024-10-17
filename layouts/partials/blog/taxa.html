@@ -1,4 +1,4 @@
-<p class="font-bold mb-3">{{ .taxaLabel }}</p>
+<p class="font-bold mb-3">{{ T .taxaType | strings.FirstUpper }}</p>
 {{- $taxa := .currentPage.Site.GetPage "taxonomy" .taxaType }}
 {{- range $taxa.Pages.ByTitle }}
   {{- partialCached "blog/item-with-count"

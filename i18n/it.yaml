@@ -1,5 +1,9 @@
+categories: categorie
 next: successivo
 previous: precedente
 readingTime:
-  one: "Tempo stimato di lettura: {{ . }} minuto"
-  other: "Tempo stimato di lettura: {{ . }} minuti"
+  one: "tempo stimato di lettura: {{ . }} minuto"
+  other: "tempo stimato di lettura: {{ . }} minuti"
+related: articoli simili
+tags: tag
+toc: sommario

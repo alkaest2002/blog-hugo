@@ -1,5 +1,9 @@
+categories: categories
 next: next
 previous: previous
 readingTime:
-  one: "Estimated reading time: {{ . }} minute"
-  other: "Estimated reading time: {{ . }} minutes"
+  one: "estimated reading time: {{ . }} minute"
+  other: "estimated reading time: {{ . }} minutes"
+related: related articles
+tags: tags
+toc: table of contents

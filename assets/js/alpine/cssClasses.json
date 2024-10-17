@@ -17,14 +17,14 @@
     }
   },
   "selected": { 
-    "bg-blue-50": true, 
-    "hover:bg-blue-50": true,
+    "bg-cyan-50": true, 
+    "hover:bg-cyan-50": true,
     "border": true,
     "border-border-transparent": true 
   },
   "selectedWithRing": { 
     "border": true,
-    "border-blue-500": true
+    "border-cyan-500": true
   },
   "nonSelected": { 
     "border": true,
@@ -40,8 +40,8 @@
     "outline-none": true
   },
   "enabledButton": {
-    "bg-blue-500": true,
-    "hover:bg-blue-700": true,
+    "bg-cyan-500": true,
+    "hover:bg-cyan-700": true,
     "cursor-pointer": true
   },
   "grayDot": {
@@ -51,7 +51,7 @@
     "text-orange-300": true
   },
   "blueDot": {
-    "text-blue-400": true
+    "text-cyan-400": true
   }
  
 }
