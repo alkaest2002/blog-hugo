@@ -1,13 +1,15 @@
 {{- define "main" }}
 {{ $currentPage := . }}
 {{ $pages := .Pages.ByDate.Reverse }}
-{{ $paginator := .Paginate $pages 2 }}
+{{ $paginator := .Paginate $pages 4 }}
 <div class="flex-grow w-full">
     <div class="mb-9">
         {{- range $paginator.Pages }}
             {{- partialCached "blog/post" . .RelPermalink }}
         {{- end }}
-        {{- partial "base/paginator" $paginator }}
+        {{ if gt $paginator.TotalPages 1 }}
+            {{- partial "base/paginator" $paginator }}
+        {{- end }}
     </div>
     <div class="flex flex-wrap gap-10">
         {{- with .Site.Taxonomies.categories }}

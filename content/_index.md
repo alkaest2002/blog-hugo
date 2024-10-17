@@ -1,4 +1,4 @@
 ---
 title: Home
 ---
-Benvenuto nella pagina iniziale.
+Wlecome to the homepage.
