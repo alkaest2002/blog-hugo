@@ -1,8 +1,13 @@
 {{- define "main" }}
 <div x-data="viewHome" x-init="initHome" class="w-full relative">
     <div class="flex flex-grow justify-center">
-        <div class="text-center w-1/2">
+        <div class="text-center md:w-1/2">
             <div>{{ .Content }}</div>
+            {{ with .Site.GetPage "/headless" }}
+              {{- with .Resources.Get "avatars.svg" }}
+                {{ .Content | safeHTML }}
+              {{- end }}
+            {{- end }}
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: Theory
 weight: 1
 ---
 Blog section
