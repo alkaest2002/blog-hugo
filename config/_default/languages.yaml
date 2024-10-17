@@ -2,12 +2,12 @@ it:
   languageCode: it-IT
   languageDirection: ltr
   languageName: Italiano
-  title: Personalità
+  title: P4
   weight: 1
 
 en:
   languageCode: en-US
   languageDirection: ltr
   languageName: English
-  title: Personality
+  title: P4
   weight: 2

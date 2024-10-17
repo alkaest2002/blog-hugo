@@ -1,7 +1,9 @@
 {{- define "main" }}
 <div x-data="viewHome" x-init="initHome" class="w-full relative">
-    <div x-bind="opacity" class="flex-grow w-full">
-        <div>{{ .Content }}</div>
+    <div class="flex flex-grow justify-center">
+        <div class="text-center w-1/2">
+            <div>{{ .Content }}</div>
+        </div>
     </div>
 </div>
 {{- end }}

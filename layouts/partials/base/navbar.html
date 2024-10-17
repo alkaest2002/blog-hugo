@@ -1,37 +1,28 @@
 <nav>
   <div class="flex flex-wrap items-center justify-between mx-auto p-9">
-    <a href='{{ (.Site.GetPage "home").RelPermalink }}' class="flex items-center space-x-3 rtl:space-x-reverse">
-      <span class="self-center text-3xl font-bold whitespace-nowrap">{{ .Site.Title }}</span>
-    </a>
-    <button data-collapse-toggle="main-navbar" type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-700 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-      aria-controls="main-navbar" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15" />
-      </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="main-navbar">
-      <div
-        class="flex flex-col justify-center items-center font-medium mt-4 rounded-lg bg-gray-50 md:space-x-4 md:flex-row md:mt-0 md:border-0 md:bg-transparent">
-        {{- with .Site.GetPage "home"}}
-            <a href="{{ .RelPermalink }}"
-              class="block py-2 px-3 md:p-0 text-white bg-cyan-700 rounded md:bg-transparent md:text-cyan-600"
-              aria-current="page">{{ .Title }}</a>
-        {{- end}}
-        {{- range .Site.Sections }}
-            <a href="{{ .RelPermalink }}"
-              class="block py-2 px-3 md:p-0 text-white bg-cyan-700 rounded md:bg-transparent md:text-cyan-600"
-              aria-current="page">{{ .Title }}</a>
-        {{- end }}
-          <div class="size-8">
-            {{ with .Site.GetPage "/headless" }}
-              {{- with .Resources.Get "flag.svg" }}
-                {{ .Content | safeHTML }}
-              {{- end }}
-            {{- end }}
-          </div>
+    <div>
+      <a href="{{ .Site.Home.RelPermalink }}" class="text-3xl font-extrabold">
+        &#10063; {{ .Site.Title }}
+      </a>
+    </div>
+    <div
+      class="flex justify-center items-center font-bold">
+      {{- with .Site.Home }}
+        <a href="{{ .RelPermalink }}"
+          class="block py-2 px-3 hover:underline"
+          aria-current="page">{{ .Title | upper }}
+        </a>
+      {{- end}}
+      {{- range .Site.Sections.ByWeight }}
+        <a href="{{ .RelPermalink }}"
+          class="block py-2 px-3 hover:underline"
+          aria-current="page">{{ .Title | upper }}
+        </a>
+      {{- end }}
+    </div>
+    <div>
+      <div class="px-3 font-extrabold border border-slate-400 rounded-md cursor-pointer">
+        {{- .Site.Language | upper  }}
       </div>
     </div>
   </div>

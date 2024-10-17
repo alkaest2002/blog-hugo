@@ -2,7 +2,9 @@ title: Blog
 description: Personal blog
 baseURL: http://localhost:9000
 
-pluralizelisttitles: false
+pluralizeListTitles: false
+capitalizeListTitles: false
+
 timeZone: Europe/Rome
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
