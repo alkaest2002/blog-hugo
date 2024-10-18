@@ -5,10 +5,10 @@ en:
   weight: 1
   menus:
     main:
-      - name: theory
+      - name: conceptual framework
         pageRef: /book/intro
         weight: 1
-      - name: test yourself
+      - name: know yourself
         pageRef: /test
         weight: 2
       - name: about
@@ -22,12 +22,12 @@ it:
   weight: 2
   menus:
     main:
-      - name: teoria
+      - name: modello concettuale
         pageRef: /book/intro
         weight: 1
-      - name: completa il test
+      - name: conosci te stesso
         pageRef: /test
         weight: 2
-      - name: about
+      - name: chi siamo
         pageRef: /about
         weight: 3
