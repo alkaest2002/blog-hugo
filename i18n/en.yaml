@@ -1,4 +1,5 @@
 categories: categories
+chapter: chapter {{ . }}
 next: next
 previous: previous
 readingTime:

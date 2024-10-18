@@ -1,0 +1,15 @@
+{{- define "main" }}
+{{ $currentPage := . }}
+{{ $postsByDataReversed := .Pages.ByDate.Reverse }}
+{{ $paginator := .Paginate $postsByDataReversed 4 }}
+<div class="flex-grow w-full">
+    <div class="mb-12">
+        {{- range $paginator.Pages }}
+            {{- partialCached "book/essay" . .RelPermalink }}
+        {{- end }}
+        {{ if gt $paginator.TotalPages 1 }}
+            {{- partial "base/paginator" $paginator }}
+        {{- end }}
+    </div>
+</div>
+{{- end }}

@@ -6,7 +6,7 @@ en:
   menus:
     main:
       - name: theory
-        pageRef: /blog
+        pageRef: /book
         weight: 1
       - name: test yourself
         pageRef: /test
@@ -23,7 +23,7 @@ it:
   menus:
     main:
       - name: teoria
-        pageRef: /blog
+        pageRef: /book
         weight: 1
       - name: scopri te stesso
         pageRef: /test

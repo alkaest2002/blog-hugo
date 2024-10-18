@@ -36,7 +36,7 @@
         >
           <div class="py-1" role="none">
             {{- range .Sites }}
-              <a href="{{ .Home.RelPermalink }}" class="block px-4 py-2" role="menuitem" tabindex="-1">
+              <a href="{{ .Home.RelPermalink }}" class="block px-4 py-2 hover:bg-slate-200" role="menuitem" tabindex="-1">
                 <span class="inline-block w-6 font-semibold">{{ .Language | upper }}</span> <span>{{ .Language.LanguageName }}</span>
               </a>
             {{- end }}
