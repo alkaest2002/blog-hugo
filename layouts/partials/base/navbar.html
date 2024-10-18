@@ -7,17 +7,41 @@
     </div>
     <div
       class="flex justify-center items-center font-bold">
-      {{- range .Site.Sections.ByWeight }}
-        <a href="{{ .RelPermalink }}"
-          class="block py-2 px-3 hover:underline"
-          aria-current="page">{{ .Title | upper }}
-        </a>
+      {{- range .Site.Menus.main.ByWeight }}
+      <a href="{{ .URL }}"
+        class="block py-2 px-3 hover:underline"
+        aria-current="page">{{ .Name | upper }}
+      </a>
       {{- end }}
     </div>
-    <div>
-      <div class="px-3 font-extrabold border border-slate-400 rounded-md cursor-pointer">
-        {{- .Site.Language | upper  }}
-      </div>
+    <div
+      x-data="dropdown"
+      x-bind="dropdownContainer"
+      class="relative inline-block text-left"
+      >
+        <button
+          x-bind="dropdownButton"
+          type="submit"
+          class="px-3 font-extrabold border border-slate-400 rounded-md cursor-pointer select-none">
+          {{- .Site.Language | upper }}
+        </button>
+        <div
+          x-bind="dropdownPanel"
+          style="display: none;"
+          class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          role="menu" 
+          aria-orientation="vertical" 
+          aria-labelledby="menu-button" 
+          tabindex="-1"
+        >
+          <div class="py-1" role="none">
+            {{- range .Sites }}
+              <a href="{{ .Home.RelPermalink }}" class="block px-4 py-2" role="menuitem" tabindex="-1">
+                <span class="inline-block w-6 font-semibold">{{ .Language | upper }}</span> <span>{{ .Language.LanguageName }}</span>
+              </a>
+            {{- end }}
+          </div>
+        </div>
     </div>
   </div>
 </nav>
