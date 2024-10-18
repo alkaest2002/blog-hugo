@@ -14,8 +14,17 @@ button:focus {
 }
 
 #content p {
-    margin-bottom: .8rem;
+    @apply my-3;
 }
+
+#content ul {
+    @apply my-6 ml-3 list-disc list-inside;
+}
+
+#content ul li {
+    @apply my-1;
+}
+
 
 /*********************************************/
 /* ALPINE RELATED  CSS                       */
