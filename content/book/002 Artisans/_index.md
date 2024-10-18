@@ -1,5 +1,5 @@
 ---
-title: Artisans
+title: "Tipo 1: gli atigiani"
 chapter: 2
 ---
-Summary of chapter 2: artisans
+Sintesi del capitolo 2: artigiani

@@ -1,5 +1,5 @@
 ---
-title: Idealists
+title: "Tipo 3: gli idealisti"
 chapter: 4
 ---
-Summary of chapter 4: idealists
+Sintesi del capitolo 4: idealisti

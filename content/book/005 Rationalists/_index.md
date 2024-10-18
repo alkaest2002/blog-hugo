@@ -1,5 +1,5 @@
 ---
-title: Rationalists
+title: "Tipo 4: i razionalisti"
 chapter: 5
 ---
-Summary of chapter 5: rationalists
+Sintesi del capitolo 5: razionalisti

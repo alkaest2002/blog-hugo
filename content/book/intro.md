@@ -1,20 +1,20 @@
 ---
-title: Introduction
+title: Introduzione
 ---
-Individuals vary significantly, meaning the most effective approach to navigating the **theoric model** will likely differ from person to person. Some suggestions are provided to aid this process.
+L'approccio più efficace per comprendere **il modello concettuale** differisce da persona a persona. Vengono fornite alcune indicazioni per facilitare la presa di decisione.
 
-Chapter 1 focuses on the theory and history of temperament and character studies, which is more abstract. Many readers may prefer to skim this chapter or return to it later, after gaining a better understanding of the temperaments presented in other chapters.
+Il Capitolo 1 si concentra sul temperamento e sul carattere. Alcuni lettori potrebbero voler scorrere rapidamente questa capitolo, dai contenuti astratti, o tornarci in seguito dopo aver acquisito una migliore comprensione dei temperamenti presentati altrove.
 
-After Chapter 1, readers are encouraged to explore the chapter relevant to their specific temperament:
+Dopo il **capitolo 1**, i lettori sono incoraggiati a esplorare il loro temperamento specifico:
 
-- {{< base/link text="Chapter 2 for artisans (SPs)" link="book/002-artisans/" >}}
-- {{< base/link text="Chapter 3 for guardians (SJs)" link="book/003-guardians/" >}}
-- {{< base/link text="Chapter 4 for idealists (NFs)" link="book/004-idealists/" >}}
-- {{< base/link text="Chapter 5 for rationalists (NTs)" link="book/005-rationalists/" >}}
+- {{< base/link text="Capitolo 2: gli artigiani (SP)" link="book/002-artisans/" >}}
+- {{< base/link text="Capitolo 3: i guardiani (SJ)" link="book/003-guardians/" >}}
+- {{< base/link text="Capitolo 4: gli idealisti (NF)" link="book/004-idealists/" >}}
+- {{< base/link text="Capitolo 5: i razionalisti (NT)" link="book/005-rationalists/" >}}
 
-Each chapter includes role variant portraits, which offer further details. Reading about other temperaments may provide useful contrasts. 
+Ogni capitolo include descrizioni delle cosiddette **varianti di ruolo**, che offrono più articolati approfondimenti. Leggere gli altri termperamenti può fornire ulteriori spunti di riflessione e consentire al lettore di conseguire una conoscenza più organica del modello teorico. 
 
-Regardless of how one chooses to proceed—whether reading the book sequentially or skipping to specific sections—the approach will largely depend on the reader’s temperament, whether the aim is comprehensive knowledge or personal insight.
+A prescindere da come si scelga di procedere, che si leggano queste pagine in modo sequenziale o saltando da una sezione all'altra, che si cerchi una conoscenza sistematica o schegge minute di illuminazione personale, l'approccio -- in definitiva -- dipenderà dal temperamento del lettore.
 
-{{< base/link type="button" text="start" link="/book" class="mt-3 mr-1" >}}
-{{< base/link type="button" text="take the test" link="/test" class="mt-3" >}}
+{{< base/link type="button" text="continua a leggere" link="/book" class="mt-3 mr-1" >}}
+{{< base/link type="button" text="completa il test" link="/test" class="mt-3" >}}

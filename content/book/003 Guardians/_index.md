@@ -1,5 +1,5 @@
 ---
-title: Guardians
+title: "Tipo 2: i guardiani"
 chapter: 3
 ---
-Summary of chapter 3: guardians
+Sintesi del capitolo 4: guardiani
