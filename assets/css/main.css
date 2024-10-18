@@ -13,13 +13,8 @@ button:focus {
     outline: none;
 }
 
-#fade-me-in.htmx-added {
-    opacity: 0;
-}
-
-#fade-me-in {
-    opacity: 1;
-    transition: opacity 1s ease-out;
+#content p {
+    margin-bottom: .8rem;
 }
 
 /*********************************************/
@@ -37,9 +32,20 @@ button:focus {
 .my-indicator {
     display: none;
 }
+
 .htmx-request .my-indicator {
     display: inline;
 }
+
 .htmx-request.my-indicator {
     display: inline;
+}
+
+#fade-me-in.htmx-added {
+    opacity: 0;
+}
+
+#fade-me-in {
+    opacity: 1;
+    transition: opacity 1s ease-out;
 }

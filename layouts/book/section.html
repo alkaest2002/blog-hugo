@@ -1,9 +1,11 @@
 {{- define "main" }}
 {{ $currentPage := . }}
-{{ $postsByDataReversed := .Pages.ByDate.Reverse }}
-{{ $paginator := .Paginate $postsByDataReversed 4 }}
+{{ $chapters := .Pages.ByParam "chapter" }}
+{{ $chapters = where $chapters "Params.chapter" "gt" 0 }}
+{{ $paginator := .Paginate $chapters 10 }}
 <div class="flex-grow w-full">
-    <div class="mb-12">
+    <div id="content" class="mb-9">{{ .Content }}</div>
+    <div>
         {{- range $paginator.Pages }}
             {{- partialCached "book/essay" . .RelPermalink }}
         {{- end }}

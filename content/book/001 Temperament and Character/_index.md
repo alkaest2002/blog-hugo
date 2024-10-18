@@ -2,4 +2,4 @@
 title: Temperament and character
 chapter: 1
 ---
-Summary of temperament and character
+Summary of chpater 1: temperament and character

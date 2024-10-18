@@ -1,0 +1,5 @@
+{{- $text := .Get "text" }}
+{{- $link := .Get "link" }}
+{{- $url := (.Site.GetPage $link).RelPermalink}}
+{{- $class := .Get "class" | default "text-cyan-700" -}}
+<a href="{{ $url }}" class="{{ $class }}">{{ $text }}</a>

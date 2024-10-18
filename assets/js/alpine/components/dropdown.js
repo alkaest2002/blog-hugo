@@ -37,7 +37,7 @@ export default () => ({
 
   dropdownButton: {
 
-    ["x-ref"]: "button",
+    "x-ref": "button",
 
     [":aria-expanded"]() {
       return this.open;
@@ -54,7 +54,7 @@ export default () => ({
 
   dropdownPanel: {
 
-    ["x-ref"]: "panel",
+    "x-ref": "panel",
     
     [":id"]() {
       return this.$id('dropdown-button');
