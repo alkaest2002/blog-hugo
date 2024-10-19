@@ -5,7 +5,7 @@
 <div class="flex-grow w-full">
     <div class="mb-12">
         {{- range $paginator.Pages }}
-            {{- partialCached "blog/post" . .RelPermalink }}
+            {{- .Render "post" }}
         {{- end }}
         {{ if gt $paginator.TotalPages 1 }}
             {{- partial "base/paginator" $paginator }}

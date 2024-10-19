@@ -2,8 +2,8 @@
 <div class="flex-grow w-full">
     <div class="mb-9">{{ .Content }}</div>
     {{ range .Data.Terms }}
-        {{- partialCached "blog/item-with-count"
-            (dict "itemCount" (.Count) "itemLink" .Page.RelPermalink "itemTitle" .Page.LinkTitle) .Page.RelPermalink }}
+        {{- partialCached "base/item-with-count"
+            (dict "itemCount" .Count "itemLink" .Page.RelPermalink "itemTitle" .Page.LinkTitle) .Page.RelPermalink }}
     {{ end }}
 </div>
 {{- end }}

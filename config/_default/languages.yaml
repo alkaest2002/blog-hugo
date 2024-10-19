@@ -9,7 +9,7 @@ it:
         pageRef: /book/intro
         weight: 1
       - name: conosci te stesso
-        pageRef: /test
+        pageRef: /kst
         weight: 2
       - name: chi siamo
         pageRef: /about
@@ -25,7 +25,7 @@ en:
         pageRef: /book/intro
         weight: 1
       - name: know yourself
-        pageRef: /test
+        pageRef: /kst
         weight: 2
       - name: about
         pageRef: /about

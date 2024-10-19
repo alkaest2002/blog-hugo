@@ -17,4 +17,4 @@ Each chapter includes **role variant** portraits, which offer further insights. 
 Regardless of how one chooses to proceed -- whether reading these pages sequentially or skipping to specific sections -- the approach will largely depend on the reader’s temperament, whether the aim is comprehensive knowledge or personal insight.
 
 {{< base/link type="button" text="continue reading" link="/book" class="mt-3 mr-1" >}}
-{{< base/link type="button" text="take the test" link="/test" class="mt-3" >}}
+{{< base/link type="button" text="complete the questionnaire" link="/kst" class="mt-3" >}}

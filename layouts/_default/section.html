@@ -3,9 +3,7 @@
     <div>{{ .Content }}</div>
     <div>
         {{- range .Pages }}
-        <a class="block text-cyan-600" href="{{ .RelPermalink }}"
-            >{{ .Title }}
-        </a>
+            {{- partialCached "base/item" . .RelPermalink }}
         {{- end }}
     </div>
 </div>

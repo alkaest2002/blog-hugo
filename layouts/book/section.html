@@ -7,7 +7,7 @@
     <div id="content" class="mb-9">{{ .Content }}</div>
     <div>
         {{- range $paginator.Pages }}
-            {{- partialCached "book/essay" . .RelPermalink }}
+            {{- .Render "summary" }}
         {{- end }}
         {{ if gt $paginator.TotalPages 1 }}
             {{- partial "base/paginator" $paginator }}

@@ -4,7 +4,7 @@
     <div class="mb-9">{{ .Content }}</div>
     <div>
         {{- range .Pages }}
-            {{- partialCached "blog/post" . . }}
+            {{- partialCached "base/item" . .RelPermalink }}
         {{- end }}
     </div>
 </div>
