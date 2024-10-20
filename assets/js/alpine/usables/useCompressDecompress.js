@@ -18,12 +18,12 @@ export function compressString(inputString) {
     .join("")
 }
 
-export function decompressString(compressedInput, originalInputLength = 70) {
+export function decompressString(compressedInput) {
   return compressedInput
     .split("")
     .map(input => base64ToDecimal(input))
     .map(input => decimalToBinary(input))
     .map(input => binaryToString(input))
     .join("")
-    .slice(0, originalInputLength)
+    .slice(0, 70)
 }
