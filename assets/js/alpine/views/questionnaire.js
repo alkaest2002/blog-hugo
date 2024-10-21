@@ -55,6 +55,14 @@ export default () => ({
     },
   },
 
+  "itemText": {
+    ["x-ref"]: "itemText",
+
+    ["x-text"]() {
+      return this.$store.questionnaire.currentItem?.text;
+    },
+  },
+
   "counter": {
     ["x-ref"]: "counter",
 
@@ -68,7 +76,7 @@ export default () => ({
     ["x-ref"]: "optionA",
 
     ["x-text"]() {
-      return this.$store.questionnaire.currentItem?.options?.a;
+      return this.$store.questionnaire.currentItem?.options?.a?.text;
     },
 
     [":class"]() {
@@ -86,7 +94,7 @@ export default () => ({
     ["x-ref"]: "optionB",
 
     ["x-text"]() {
-      return this.$store.questionnaire.currentItem?.options?.b;
+      return this.$store.questionnaire.currentItem?.options?.b?.text;
     },
 
     [":class"]() {
