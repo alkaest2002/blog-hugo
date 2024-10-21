@@ -1,5 +1,6 @@
 ---
 title: Introduzione
+layout: introduction
 ---
 L'approccio più efficace per comprendere **il modello concettuale** differisce da persona a persona. Vengono fornite alcune indicazioni per facilitare la presa di decisione.
 
@@ -17,4 +18,4 @@ Ogni capitolo include descrizioni delle cosiddette **varianti di ruolo**, che of
 A prescindere da come si scelga di procedere, che si leggano queste pagine in modo sequenziale o saltando da una sezione all'altra, che si cerchi una conoscenza sistematica o schegge minute di illuminazione personale, l'approccio -- in definitiva -- dipenderà dal temperamento del lettore.
 
 {{< base/link type="button" text="continua a leggere" link="/book" class="mt-3 mr-1" >}}
-{{< base/link type="button" text="completa il questionario" link="/kst" class="mt-3" >}}
+{{< base/link type="button" text="completa il questionario" link="/kts" class="mt-3" >}}
