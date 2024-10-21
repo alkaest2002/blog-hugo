@@ -66,9 +66,8 @@ export default () => ({
   "counter": {
     ["x-ref"]: "counter",
 
-    ["x-text"]() {
-      return `${this.$store.questionnaire.currentItemIndex +1} 
-        | ${this.$store.questionnaire.items.length}`;
+    ["x-html"]() {
+      return `${this.$store.questionnaire.currentItemIndex +1}&middot;${this.$store.questionnaire.items.length}`;
     },
   },
 

@@ -1,7 +1,7 @@
 categories: categorie
 chapter: capitolo {{ . }}
 choose: scegli tra una delle due opzioni proposte.
-chooseTip: puoi usare le frecce per rispondere e per navigare tra i quesiti.
+chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti.
 item: quesito
 next: successivo
 previous: precedente

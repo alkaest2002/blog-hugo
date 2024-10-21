@@ -9,22 +9,22 @@
       data-items-url="{{ $itemsUrl }}"
     >
       <div x-bind="item">
-        <h1 class="text-xl font-bold mb-3">
+        <h1 class="text-xl font-extrabold mb-3">
           <span x-bind="itemNumber"></span>.
-          <span x-bind="itemText"></span>...
+          <span x-bind="itemText" x-transition.duration.500ms></span>...
         </h1>
         <p>{{ T "choose" | strings.FirstUpper }}</p>
-        <p class="mb-6 text-sm text-gray-500">{{ T "chooseTip" | strings.FirstUpper }}</p>
-        <div class="yarrow mb-6 flex flex-col gap-3">
-          <div x-bind="optionA" class="y-element p-3 rounded border shadow-md cursor-pointer"></div>
-          <div x-bind="optionB" class="y-element p-3 rounded border shadow-md cursor-pointer"></div>
+        <p class="mb-6 text-sm text-gray-500">{{ T "chooseTip" | strings.FirstUpper | safeHTML }}</p>
+        <div class="mb-6 flex flex-col gap-4">
+          <div x-bind="optionA" class="px-3 py-6 font-semibold text-gray-600 rounded border shadow-md cursor-pointer"></div>
+          <div x-bind="optionB" class="px-3 py-6 font-semibold text-gray-600 rounded border shadow-md cursor-pointer"></div>
         </div>
       </div>
       <div>
         <nav class="flex items-center justify-between border-t border-gray-200 bg-white py-3" aria-label="Pagination">
           <div class="hidden sm:block">
-            <p class="text-sm text-gray-700">
-              <span x-bind="counter" class="font-medium"></span>
+            <p class="text-sm font-medium">
+              <span x-bind="counter" class="font-mono"></span>
             </p>
           </div>
           <div class="flex flex-1 justify-between sm:justify-end">
