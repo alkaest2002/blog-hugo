@@ -1,5 +1,8 @@
 categories: categories
 chapter: chapter {{ . }}
+choose: choose one of the following options
+chooseTip: you can use the arrows to respond and to navigate through the questions.
+item: item
 next: next
 previous: previous
 readingTime:

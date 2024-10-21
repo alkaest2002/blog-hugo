@@ -1,8 +1,6 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
 
 const stateFn = () => [
-  ["currentView", ""],
-  ["burgerIsOpen", false],
   ["languageDropdownIsOpen", false],
   ["envIsDevelopment", false],
 ];

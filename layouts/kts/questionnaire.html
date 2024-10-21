@@ -8,9 +8,14 @@
       x-data="questionnaire"
       data-items-url="{{ $itemsUrl }}"
     >
-      <div x-bind="item" class="yarrow mb-6 flex flex-col gap-3">
-        <div x-bind="optionA" class="y-element p-3 rounded border shadow-md cursor-pointer"></div>
-        <div x-bind="optionB" class="y-element p-3 rounded border shadow-md cursor-pointer"></div>
+      <div x-bind="item">
+        <h1 class="text-xl font-bold mb-3">{{- T "item" | strings.FirstUpper }} <span x-bind="itemNumber"></span></h1>
+        <p>{{ T "choose" | strings.FirstUpper }}</p>
+        <p class="mb-6 text-sm text-gray-500">{{ T "chooseTip" | strings.FirstUpper }}</p>
+        <div class="yarrow mb-6 flex flex-col gap-3">
+          <div x-bind="optionA" class="y-element p-3 rounded border shadow-md cursor-pointer"></div>
+          <div x-bind="optionB" class="y-element p-3 rounded border shadow-md cursor-pointer"></div>
+        </div>
       </div>
       <div>
         <nav class="flex items-center justify-between border-t border-gray-200 bg-white py-3" aria-label="Pagination">
@@ -23,11 +28,11 @@
             <button
               x-bind="prevButton" 
               type="submit" 
-              class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">{{ T "previous" }}</button>
+              class="relative inline-flex items-center rounded-md px-3 py-2 text-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">{{ T "previous" }}</button>
             <button 
               x-bind="nextButton"
               type="submit"
-              class="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">{{ T "next" }}</button>
+              class="relative ml-3 inline-flex items-center rounded-md px-3 py-2 text-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">{{ T "next" }}</button>
           </div>
         </nav>
       </div>

@@ -11,7 +11,7 @@ export default (Alpine) => ({
   ...initState(stateFn, Alpine),
 
   get nextItemIndex() {
-    return Math.min(this.currentItemIndex +1, this.items.length);
+    return Math.min(this.currentItemIndex +1, this.items.length -1);
   },
 
   get previousItemIndex() {
@@ -39,8 +39,10 @@ export default (Alpine) => ({
     this.currentItemIndex = 0;
   },
 
-  setAnswer(answerValue) {
-    this.answers.splice(this.currentItemIndex, 1, { answerValue })
+  setAnswer(answerValue, answerlatency) {
+    const previousLatency = this.currentAnswer?.latency || 0;
+    const latency = previousLatency + answerlatency
+    this.answers.splice(this.currentItemIndex, 1, { answerValue, latency });
   },
 
   goToNextItem() {

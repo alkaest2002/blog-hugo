@@ -1,13 +1,16 @@
 export default () => ({
 
+  clickedButton: null,
   highilightClass: "bg-blue-50",
-  currentSelectedOption: null,
+  epoch: Date.now(),
   
   async initQuestionnaire() {
     const itemsUrl = this.$refs.questionnaire.dataset.itemsUrl;
     const items = await fetch(itemsUrl).then(res => res.json());
+    this.elapsedEpoch = this.$store.questionnaire.currentAnswer?.latency;
     this.$store.questionnaire.setItems(items);
     this.currentSelectedOption = this.$store.questionnaire.currentAnswerValue;
+    this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
   },
 
   get canNavigateAway() {
@@ -15,8 +18,9 @@ export default () => ({
   },
 
   toggleOption() {
-    if (this.currentSelectedOption === "a") return this.$refs.optionB.click();
-    if (this.currentSelectedOption === "b") return this.$refs.optionA.click();
+    const currentAnswerValue = this.$store.questionnaire.currentAnswerValue;
+    if (currentAnswerValue === "a") return this.$refs.optionB.click();
+    if (currentAnswerValue === "b") return this.$refs.optionA.click();
     this.$refs.optionA.click();
   },
 
@@ -24,8 +28,14 @@ export default () => ({
     return {
       "arrowdown": () => this.toggleOption(),
       "arrowup": () => this.toggleOption(),
+      "arrowleft": () => this.$refs.prevButton.click(),
+      "arrowright": () => this.$refs.nextButton.click(),
       "enter": () => this.$refs.nextButton.click()
     }
+  },
+
+  setAnswer(option) {
+    this.$store.questionnaire.setAnswer(option, Date.now()-this.epoch);
   },
 
   "item": {
@@ -35,6 +45,23 @@ export default () => ({
       const functioToCall = this.keyboardActions()[key.toLowerCase()];
       functioToCall && functioToCall();
     }
+  },
+
+  "itemNumber": {
+    ["x-ref"]: "itemNumber",
+
+    ["x-text"]() {
+      return this.$store.questionnaire.currentItemIndex +1;
+    },
+  },
+
+  "counter": {
+    ["x-ref"]: "counter",
+
+    ["x-text"]() {
+      return `${this.$store.questionnaire.currentItemIndex +1} 
+        | ${this.$store.questionnaire.items.length}`;
+    },
   },
 
   "optionA": {
@@ -51,8 +78,7 @@ export default () => ({
     },
 
     ["@click.prevent"]() {
-      this.$store.questionnaire.setAnswer("a");
-      this.currentSelectedOption = "a"
+      this.setAnswer("a")
     }
   },
 
@@ -70,33 +96,39 @@ export default () => ({
     },
 
     ["@click.prevent"]() {
-      this.$store.questionnaire.setAnswer("b");
-      this.currentSelectedOption = "b"
+      this.setAnswer("b");
     }
-  },
-
-  "counter": {
-    ["x-ref"]: "counter",
-
-    ["x-text"]() {
-      return `${this.$store.questionnaire.currentItemIndex +1} | ${this.$store.questionnaire.items.length}`;
-    },
   },
 
   "nextButton": {
     ["x-ref"]: "nextButton",
 
     ["@click.prevent"]() {
-      console.log(this.$store.questionnaire.currentAnswerValue)
+      this.clickedButton = "next";
       this.canNavigateAway && this.$store.questionnaire.goToNextItem();
-    }
+      setTimeout(() => this.clickedButton = null, 150);
+    },
+
+    [":class"]() {
+      return this.clickedButton === "next"
+        ? this.highilightClass
+        : "bg-tranpsarent"
+    },
   },
 
   "prevButton": {
     ["x-ref"]: "prevButton",
 
     ["@click.prevent"]() {
-      this.canNavigateAway && this.$store.questionnaire.goToPreviousItem();
+      this.clickedButton = "prev";
+      this.$store.questionnaire.goToPreviousItem();
+      setTimeout(() => this.clickedButton = null, 150);
+    },
+
+    [":class"]() {
+      return this.clickedButton === "prev"
+        ? this.highilightClass
+        : "bg-tranpsarent"
     }
   }
 });
