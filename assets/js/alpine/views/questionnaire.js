@@ -1,24 +1,43 @@
 export default () => ({
 
   highilightClass: "bg-blue-50",
+  currentSelectedOption: null,
   
   async initQuestionnaire() {
-    this.$store.app.currentView = "questionnaire";
     const itemsUrl = this.$refs.questionnaire.dataset.itemsUrl;
     const items = await fetch(itemsUrl).then(res => res.json());
     this.$store.questionnaire.setItems(items);
+    this.currentSelectedOption = this.$store.questionnaire.currentAnswerValue;
   },
 
   get canNavigateAway() {
-    return this.$store.questionnaire.currentAnswerValue
+    return this.$store.questionnaire.currentAnswerValue;
+  },
+
+  toggleOption() {
+    if (this.currentSelectedOption === "a") return this.$refs.optionB.click();
+    if (this.currentSelectedOption === "b") return this.$refs.optionA.click();
+    this.$refs.optionA.click();
+  },
+
+  keyboardActions() {
+    return {
+      "arrowdown": () => this.toggleOption(),
+      "arrowup": () => this.toggleOption(),
+      "enter": () => this.$refs.nextButton.click()
+    }
   },
 
   "item": {
-    ["x-ref"]: "item"
+    ["x-ref"]: "item",
+
+    ["@keyup.window.prevent"]({ key }) {
+      const functioToCall = this.keyboardActions()[key.toLowerCase()];
+      functioToCall && functioToCall();
+    }
   },
 
   "optionA": {
-    
     ["x-ref"]: "optionA",
 
     ["x-text"]() {
@@ -33,11 +52,11 @@ export default () => ({
 
     ["@click.prevent"]() {
       this.$store.questionnaire.setAnswer("a");
+      this.currentSelectedOption = "a"
     }
   },
 
   "optionB": {
-
     ["x-ref"]: "optionB",
 
     ["x-text"]() {
@@ -52,11 +71,11 @@ export default () => ({
 
     ["@click.prevent"]() {
       this.$store.questionnaire.setAnswer("b");
+      this.currentSelectedOption = "b"
     }
   },
 
   "counter": {
-    
     ["x-ref"]: "counter",
 
     ["x-text"]() {
@@ -65,7 +84,6 @@ export default () => ({
   },
 
   "nextButton": {
-    
     ["x-ref"]: "nextButton",
 
     ["@click.prevent"]() {
@@ -75,7 +93,6 @@ export default () => ({
   },
 
   "prevButton": {
-    
     ["x-ref"]: "prevButton",
 
     ["@click.prevent"]() {
