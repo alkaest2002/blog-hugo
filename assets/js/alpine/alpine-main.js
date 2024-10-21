@@ -1,18 +1,25 @@
 import Alpine from "alpinejs";
 import persist from "@alpinejs/persist";
 
-import storeApp from "./stores/alpine-store-app";
-import vBase from "./views/base/vBase";
-import vHome from "./views/home/vHome";
+// stores
+import sApp from "./stores/app";
+import sQuestionnaire from "./stores/questionnaire";
 
+// views
+import vBase from "./views/base";
+import vHome from "./views/home";
+import vQuestionnaire from "./views/questionnaire";
 
-import dropdown from "./components/dropdown";
+// components
+import cDropdown from "./components/dropdown";
 
 Alpine.plugin(persist);
-Alpine.store("app", storeApp(Alpine));
-Alpine.data("vBase", vBase);
-Alpine.data("vHome", vHome);
+Alpine.store("app", sApp(Alpine));
+Alpine.store("questionnaire", sQuestionnaire(Alpine));
+Alpine.data("base", vBase);
+Alpine.data("home", vHome);
+Alpine.data("questionnaire", vQuestionnaire);
 
-Alpine.data("dropdown", dropdown);
+Alpine.data("dropdown", cDropdown);
 
 window.Alpine ?? (window.Alpine = Alpine).start();

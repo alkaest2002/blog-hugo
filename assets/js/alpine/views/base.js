@@ -1,6 +1,6 @@
 export default () => ({
-  async initBase(envIsDevelopment) {
-    this.$store.app.envIsDevelopment = envIsDevelopment;
+  initBase() {
+    this.$store.app.envIsDevelopment = this.$refs.base.dataset.env == "true";
   },
 
   htmxEvents: {

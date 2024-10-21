@@ -1,5 +1,5 @@
 export default () => ({
-  async initHome() {
+  initHome() {
     this.$store.app.currentView = "home";
   },
 });
