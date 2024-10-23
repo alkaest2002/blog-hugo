@@ -74,7 +74,7 @@ export default () => ({
 
     ["x-html"]() {
       return `${this.$store.questionnaire.currentItemIndex +1}
-        &middot;${this.$store.questionnaire.items.length} - ${this.$store.questionnaire.getSortedDimensionByCount()}`;
+        &middot;${this.$store.questionnaire.items.length} - ${this.$store.questionnaire.type} - ${this.$store.questionnaire.typeWithCoherenceValue}`;
     },
   },
 
