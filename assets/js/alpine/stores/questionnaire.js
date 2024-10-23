@@ -43,17 +43,25 @@ export default (Alpine) => ({
     const types = {
       EJNT: "ENTJ", EFJN: "ENFJ", EFJS: "ESFJ", EJST: "ESTJ", 
       ENPT: "ENTP", ENFP: "ENFP", EFPS: "ESFP", EPST: "ESTP", 
-      IJNT: "INTJ", IFJN: "INFJ", IFJS: "ISFJ", IJST: "ISTJ", 
-      INPT: "INTP", IFNP: "INFP", IFPS: "ISFP", IPST: "ISTP"
+      IJNT: "INTJ", FIJN: "INFJ", FIJS: "ISFJ", IJST: "ISTJ", 
+      INPT: "INTP", FINP: "INFP", FIPS: "ISFP", IPST: "ISTP"
     }
+    // get dimensions ordered by count (desc)
     const dimensionsByCount = Object.entries(this.dimensions.counts)
       .sort((a, b) => b.at(-1)-a.at(-1))
       .map(([key, _]) => key);
-    const type = Object.keys(types)
-      .map(k => ([k, k.split("").reduce((acc, itr) => acc += dimensionsByCount.indexOf(itr), 0)]))
-      .sort((a, b) => a.at(-1) - b.at(-1))
-      .map(([k, _]) => k)
-      .at(0);
+    // group dimensions py polarities and compute position of each dimension
+    const IE = ["I","E"].map(el => [ el, dimensionsByCount.indexOf(el) ]);
+    const NS = ["N","S"].map(el => [ el, dimensionsByCount.indexOf(el) ]);
+    const TF = ["T","F"].map(el => [ el, dimensionsByCount.indexOf(el) ]);
+    const JP = ["J","P"].map(el => [ el, dimensionsByCount.indexOf(el) ]);
+    // get most relevant type
+    const type = [IE, NS, TF, JP]
+      .map(el => el.sort((a,b) => a.at(-1) - b.at(-1)))
+      .map(el => el.at(0).at(0))
+      .sort()
+      .join("");
+    // return canonical type (i.e., correct letters position)
     return types[type];
   },
 
