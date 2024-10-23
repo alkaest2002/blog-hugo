@@ -51,7 +51,7 @@ export default (Alpine) => ({
     const TF = ["T","F"].map(el => [ el, this.dimensions.counts[el] ]);
     const JP = ["J","P"].map(el => [ el, this.dimensions.counts[el] ]);
     return [IE, NS, TF, JP]
-      .map(el => el.sort((a, b) => b.at(-1) - a.at(-1)))
+      .map(el => el.sort((a, b) => b.at(1) - a.at(1)))
       .map(el => [ el.at(0).at(0), el.at(0).at(1) - el.at(1).at(1)])
   },
 
@@ -62,7 +62,9 @@ export default (Alpine) => ({
 
   setItems(items) {
     this.items = items;
-    this.currentItemIndex = 0;
+    this.currentItemIndex = this.answers.length === 0
+      ? 0
+      : Math.min(this.answers.length, this.items.length-1);
   },
 
   setAnswer(answerValue, answerlatency) {
