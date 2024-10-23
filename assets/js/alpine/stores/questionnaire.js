@@ -39,6 +39,24 @@ export default (Alpine) => ({
     return this.answers.length === this.items.length;
   },
 
+  getSortedDimensionByCount() {
+    const types = {
+      EJNT: "ENTJ", EFJN: "ENFJ", EFJS: "ESFJ", EJST: "ESTJ", 
+      ENPT: "ENTP", ENFP: "ENFP", EFPS: "ESFP", EPST: "ESTP", 
+      IJNT: "INTJ", IFJN: "INFJ", IFJS: "ISFJ", IJST: "ISTJ", 
+      INPT: "INTP", IFNP: "INFP", IFPS: "ISFP", IPST: "ISTP"
+    }
+    const dimensionsByCount = Object.entries(this.dimensions.counts)
+      .sort((a, b) => b.at(-1)-a.at(-1))
+      .map(([key, _]) => key);
+    const type = Object.keys(types)
+      .map(k => ([k, k.split("").reduce((acc, itr) => acc += dimensionsByCount.indexOf(itr), 0)]))
+      .sort((a, b) => a.at(-1) - b.at(-1))
+      .map(([k, _]) => k)
+      .at(0);
+    return types[type];
+  },
+
   setItems(items) {
     this.items = items;
     this.currentItemIndex = 0;

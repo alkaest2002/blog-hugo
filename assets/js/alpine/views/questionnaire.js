@@ -9,6 +9,12 @@ export default () => ({
     const items = await fetch(itemsUrl).then(res => res.json());
     this.elapsedEpoch = this.$store.questionnaire.currentAnswer?.latency;
     this.$store.questionnaire.setItems(items);
+    this.$store.questionnaire.currentItemIndex = 
+      this.$store.questionnaire.answers.length === 0
+        ? 0
+        : Math.min(this.$store.questionnaire.answers.length, 
+          this.$store.questionnaire.items.length-1
+        );
     this.currentSelectedOption = this.$store.questionnaire.currentAnswerValue;
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
   },
@@ -67,7 +73,8 @@ export default () => ({
     ["x-ref"]: "counter",
 
     ["x-html"]() {
-      return `${this.$store.questionnaire.currentItemIndex +1}&middot;${this.$store.questionnaire.items.length}`;
+      return `${this.$store.questionnaire.currentItemIndex +1}
+        &middot;${this.$store.questionnaire.items.length} - ${this.$store.questionnaire.getSortedDimensionByCount()}`;
     },
   },
 
