@@ -8,10 +8,15 @@ export default () => ({
   },
 
   "typeLink": {
-    [":href"]() {
-      const url = `types/${this.$store.questionnaire.type}`;
-      return this.$store.url.getUrlRaw(url);
-    }
+    ["@click.prevent"]() {
+      this.$store.url.goToPage(this.$store.questionnaire.type);
+    },
+  },
+
+  "answersLink": {
+    ["@click.prevent"]() {
+      this.$store.url.goToPage("answers");
+    },
   },
 
   "compressedAnswers": {
