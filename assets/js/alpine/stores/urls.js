@@ -9,14 +9,23 @@ export default (Alpine) => ({
   
   ...initState(stateFn, Alpine),
 
+  getUrlPage(page) {
+    const lowerCasePage = page.toLowerCase();
+    const urlKey = `url${lowerCasePage.charAt(0).toUpperCase()}${lowerCasePage.slice(1)}`;
+    return this[urlKey];
+  },
+
+  getUrlRaw(url) {
+    return `${this.urlBase}${url}/`;
+  },
+
   setUrl(data) {
     Object.entries(data).forEach(([ urlKey, url ]) => this[urlKey] = url);
   },
 
-  goToPage(page) {
-    const lowerCasePage = page.toLowerCase();
-    const urlKey = `url${lowerCasePage.charAt(0).toUpperCase()}${lowerCasePage.slice(1)}`;
-    (urlKey in this) && window.htmx.ajax("GET", this[urlKey]);
+  goToUrlPage(page) {
+    const url = this.getUrlPage(page);
+    (url) && window.htmx.ajax("GET", url);
   },
   
   goToUrlRaw(urlRaw) {

@@ -3,7 +3,7 @@ import persist from "@alpinejs/persist";
 
 // stores
 import sApp from "./stores/app";
-import sNavigation from "./stores/navigation";
+import sUrls from "./stores/urls";
 import sQuestionnaire from "./stores/questionnaire";
 
 // views
@@ -17,7 +17,7 @@ import cDropdown from "./components/dropdown";
 
 Alpine.plugin(persist);
 Alpine.store("app", sApp(Alpine));
-Alpine.store("navigation", sNavigation(Alpine));
+Alpine.store("url", sUrls(Alpine));
 Alpine.store("questionnaire", sQuestionnaire(Alpine));
 Alpine.data("base", vBase);
 Alpine.data("home", vHome);
