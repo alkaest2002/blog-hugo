@@ -4,8 +4,13 @@ export default () => ({
   },
 
   htmxEvents: {
-    ["@htmx:after-swap.camel"]() {
-      this.$store.app.burgerIsOpen = false;
+    ["@htmx:before-swap.camel"]({ detail }) {
+      const res = detail.serverResponse;
+      if (res.indexOf("canonical") > -1) {
+        const match = res.match(/http-equiv.+url=(.+)"/m);
+        detail.shouldSwap = !match;
+        match && window.htmx.ajax("GET", match[1]);
+      }
     },
   },
 
