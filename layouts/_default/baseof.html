@@ -20,6 +20,7 @@
         {{- partial "base/breadcrumbs" . }}
         <div class="h-full w-full p-9 relative">
             {{- block "main" . }} {{- end }}
+            {{- partialCached "base/footer" . }}
         </div>
     </body>
 </html>

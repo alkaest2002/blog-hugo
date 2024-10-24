@@ -1,12 +1,10 @@
 {{- define "main" }}
 <div class="flex-grow w-full">
-    {{- $itemsUrl := (.GetPage "items").RelPermalink }}
     <div
       x-cloak
       x-ref="questionnaire"
       x-init="initQuestionnaire"
       x-data="questionnaire"
-      data-items-url="{{ $itemsUrl }}"
     >
       <div x-bind="item">
         <h1 class="text-xl font-extrabold mb-3">

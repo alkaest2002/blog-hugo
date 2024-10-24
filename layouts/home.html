@@ -1,5 +1,11 @@
 {{- define "main" }}
-<div x-data="home" x-init="initHome" class="w-full relative">
+{{- $urlBase := .Site.Home.RelPermalink }}
+<div 
+  x-data="home"
+  x-ref="home"
+  x-init="initHome"
+  data-url-base="{{ $urlBase }}"
+  class="w-full relative">
     <div class="flex flex-grow justify-center">
         <div class="text-center md:w-1/2">
             <div>{{ .Content }}</div>
