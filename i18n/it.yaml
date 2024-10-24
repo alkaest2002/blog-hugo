@@ -1,9 +1,11 @@
 answers: risposte
+answersButton: vai alle tue risposte
 answersIndex: nr.
 categories: categorie
 chapter: capitolo {{ . }}
-choose: scegli tra una delle due opzioni proposte.
-chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti.
+choose: scegli tra una delle due opzioni proposte
+chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e le frecce &larr; &rarr; per navigare tra i quesiti
+compressedAnswersInfo: Conserva questo codice. Ti servirà per confrontare le tue risposte con le risposte di un'altra persona
 item: quesito
 next: successivo
 previous: precedente
@@ -12,6 +14,9 @@ readingTime:
   one: "tempo stimato di lettura: {{ . }} minuto"
   other: "tempo stimato di lettura: {{ . }} minuti"
 related: articoli simili
+sec: sec
 tags: tag
 toc: sommario
 type: il tuo codice tipo
+typeInfo: leggi le informazioni riguardanti il tuo codice tipo
+typeReadButton: leggi le informazioni del codice tipo
