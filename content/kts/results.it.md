@@ -2,4 +2,4 @@
 title: Risultati
 layout: results
 ---
-{{< base/lorem count=2 >}}
+{{< base/lorem count=3 >}}
