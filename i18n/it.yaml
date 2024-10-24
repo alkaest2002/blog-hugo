@@ -5,9 +5,11 @@ chooseTip: usa le frecce &uarr; &darr; per selezionare le opzioni di risposta e 
 item: quesito
 next: successivo
 previous: precedente
+read: leggi
 readingTime:
   one: "tempo stimato di lettura: {{ . }} minuto"
   other: "tempo stimato di lettura: {{ . }} minuti"
 related: articoli simili
 tags: tag
 toc: sommario
+type: il tuo codice tipo
