@@ -1,18 +1,23 @@
 export default () => ({
-  initAnswers() {},
 
-  itemCouples: {
-    ["x-for"]: "(couple, index) in $store.questionnaire.itemCouples",
-    [":key"]: "index"
+  itemsWithAnswers: null,
+
+  initAnswers() {
+    this.itemsWithAnswers = this.$store.questionnaire.itemsWithAnswers;
   },
 
-  option(opt, answerValue, index) {
+  tableRows: {
+    ["x-for"]: "{ itemId, itemA, itemB, answer } in itemsWithAnswers",
+    [":key"]: "itemId"
+  },
+
+  option(itemTextWithAnswer, optionValue, answer) {
     return {
       "x-text"() {
-        return opt
+        return itemTextWithAnswer
       },
       ":class"() {
-        return this.$store.questionnaire.answers[index]?.answerValue === answerValue
+        return answer.answerValue === optionValue
           ? "font-semibold"
           : "text-sm italic text-gray-400"
       }

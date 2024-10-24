@@ -50,13 +50,14 @@ export default (Alpine) => ({
     return this.currentAnswer?.answerValue;
   },
 
-  get itemCouples() {
-    const items =  Object.values(this.items)
-      .map(el => [
-        `${el.text}... ${el.options.a.text}`,
-        `${el.text}... ${el.options.b.text}`,
-      ]);
-    return items
+  get itemsWithAnswers() {
+    return Object.values(this.items)
+      .map((el, index) => ({
+        itemId: el.id,
+        itemA: `${el.text}... ${el.options.a.text}`,
+        itemB: `${el.text}... ${el.options.b.text}`,
+        answer: this.answers[index]
+      }));
   },
 
   get compressedAnswers() {
