@@ -1,5 +1,5 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
-import { compressString, decompressString } from "../usables/useCompressDecompress";
+import { compressString } from "../usables/useCompressDecompress";
 
 const stateFn = () => [
   ["items", []],
@@ -21,6 +21,10 @@ const stateFn = () => [
 export default (Alpine) => ({
   
   ...initState(stateFn, Alpine),
+
+  get isComplete() {
+    return this.answers.length > 0 && this.answers.length === this.items.length;
+  },
 
   get nextItemIndex() {
     return Math.min(this.currentItemIndex +1, this.items.length -1);
@@ -46,14 +50,20 @@ export default (Alpine) => ({
     return this.currentAnswer?.answerValue;
   },
 
-  get isComplete() {
-    return this.answers.length === this.items.length;
+  get itemCouples() {
+    const items =  Object.values(this.items)
+      .map(el => [
+        `${el.text}... ${el.options.a.text}`,
+        `${el.text}... ${el.options.b.text}`,
+      ]);
+    return items
   },
 
   get compressedAnswers() {
     const answers = this.answers.map(({answerValue}) => answerValue).join("");
-    const compressedAnswers = compressString(answers);
-    return compressedAnswers;
+    return answers.length > 0
+      ? compressString(answers)
+      : undefined
   },
 
   get typeWithCoherenceValue() {

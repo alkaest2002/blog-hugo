@@ -1,5 +1,5 @@
 ---
-title: Questionnaire instrunctions
+title: Know yourself
 ---
 There is much to be gained by appreciating differences, and much to be lost by ignoring them or condemning them. But the first step toward seeing others as distinct from yourself is to **become better acquainted with your own traits of character**. 
 

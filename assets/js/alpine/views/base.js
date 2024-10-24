@@ -11,7 +11,7 @@ export default () => ({
         detail.shouldSwap = !match;
         match && window.htmx.ajax("GET", match[1]);
       }
-    },
+    }
   },
 
   opacity: {

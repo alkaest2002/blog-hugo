@@ -2,6 +2,7 @@ import { initState, wipeState } from "../usables/useAlpineStore";
 
 const stateFn = () => [
   ["urlBase", null],
+  ["urlQuestionnaire", null],
   ["urlResults", null],
 ];
 
@@ -23,7 +24,8 @@ export default (Alpine) => ({
     Object.entries(data).forEach(([ urlKey, url ]) => this[urlKey] = url);
   },
 
-  goToUrlPage(page) {
+  goToPage(page) {
+    console.log(window)
     const url = this.getUrlPage(page);
     (url) && window.htmx.ajax("GET", url);
   },

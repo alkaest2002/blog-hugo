@@ -11,13 +11,24 @@
   </div>
   <div 
     x-data="results"
+    x-init="initResults"
     class="py-3"
   >
-    <div class="mt-3">
+    <div
+      x-cloak
+      x-show="!$store.questionnaire.isComplete"
+      class="mt-3">
+      <span>{{ T "noResults" }}</span>
+    </div>
+    <div
+      x-cloak
+      x-show="$store.questionnaire.isComplete"
+      class="mt-3"
+    >
       <div class="flex flex-col items-center justify-center p-5 bg-blue-50 border rounded shadow-lg">
         <p>{{ T "type" | strings.FirstUpper }}</p>
         <span x-bind="type" class="text-3xl font-extrabold"></span>
-        <p class="my-3 text-sm text-gray-500">Leggi le caratteristiche di personalità del tuo codice</p>
+        <p class="my-3 text-sm text-gray-500">{{ T "typeInfo" }}</p>
         <a
           x-bind="typeLink"
           class="inline-flex items-center gap-x-2 rounded-md bg-cyan-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
@@ -30,7 +41,7 @@
       <div class="flex flex-col items-center justify-center p-5 mt-6 bg-orange-50 rounded border shadow-lg">
         <p>Codice risposte</p>
         <span x-bind="compressedAnswers" class="text-3xl font-extrabold"></span>
-        <p class="mt-3 text-sm text-gray-500">Conserva questo codice se vuoi confrontare la tua personalità con quella di un'altra persona.</p>
+        <p class="mt-3 text-sm text-gray-500">{{ T "compressedAnswersInfo" }}</p>
       </div>
     </div>
   </div>

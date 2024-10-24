@@ -1,5 +1,5 @@
 ---
-title: Istruzioni del questionario
+title: Conosci te stesso
 ---
 C'è tanto da guadagnare nello scoprire le differenze individuali e molto da perdere nell'ignorarle o peggio condannarle. Il primo passo che dovresti compiere per "comprendere" meglio gli altri è **diventare più consapevole del tuo carattere**.
 

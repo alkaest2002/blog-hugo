@@ -1,3 +1,5 @@
+answers: risposte
+answersIndex: nr.
 categories: categorie
 chapter: capitolo {{ . }}
 choose: scegli tra una delle due opzioni proposte.

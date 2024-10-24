@@ -13,15 +13,15 @@
 	{{- $styles = $styles | css.PostCSS | minify | fingerprint | resources.PostProcess }}
 	<link href="{{ $styles.RelPermalink }}" rel="stylesheet" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
 {{- end }}
-{{- $alpine := resources.Get "js/alpine/alpine-main.js" }}
-{{- $alpine = $alpine | js.Build (dict "targetPath" "js/alpine.js" "minify" true) }}
-{{- $alpineSecure := $alpine | resources.Fingerprint "sha512" }}
-{{- with $alpineSecure }}
-	<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
-{{- end }}
 {{- $htmx := resources.Get "js/htmx/htmx-main.js" }}
 {{- $htmx = $htmx | js.Build (dict "targetPath" "js/htmx.js" "minify" true) }}
 {{- $htmxSecure := $htmx | resources.Fingerprint "sha512" }}
 {{- with $htmxSecure }}
+	<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+{{- end }}
+{{- $alpine := resources.Get "js/alpine/alpine-main.js" }}
+{{- $alpine = $alpine | js.Build (dict "targetPath" "js/alpine.js" "minify" true) }}
+{{- $alpineSecure := $alpine | resources.Fingerprint "sha512" }}
+{{- with $alpineSecure }}
 	<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
 {{- end }}
