@@ -5,5 +5,10 @@ export default () => ({
     ["x-text"]() {
       return this.$store.questionnaire.type;
     }
+  },
+  "compressedAnswers": {
+    ["x-text"]() {
+      return this.$store.questionnaire.compressedAnswers;
+    }
   }
 });

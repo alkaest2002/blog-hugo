@@ -4,12 +4,9 @@ export default () => ({
   highilightClass: "bg-blue-50",
   epoch: Date.now(),
   
-  async initQuestionnaire() {
-    const itemsUrl = this.$refs.questionnaire.dataset.itemsUrl;
-    const items = await fetch(itemsUrl).then(res => res.json());
-    this.elapsedEpoch = this.$store.questionnaire.currentAnswer?.latency;
-    this.$store.questionnaire.setItems(items);
+  initQuestionnaire() {
     this.currentSelectedOption = this.$store.questionnaire.currentAnswerValue;
+    this.elapsedEpoch = this.$store.questionnaire.currentAnswer?.latency;
     this.$watch("$store.questionnaire.currentItemIndex", () => this.epoch = Date.now());
   },
 
@@ -68,7 +65,7 @@ export default () => ({
 
     ["x-html"]() {
       return `${this.$store.questionnaire.currentItemIndex +1}
-        &middot;${this.$store.questionnaire.items.length} - ${this.$store.questionnaire.type} - ${this.$store.questionnaire.typeWithCoherenceValue}`;
+        &middot;${this.$store.questionnaire.items.length}`;
     },
   },
 
@@ -113,8 +110,12 @@ export default () => ({
 
     ["@click.prevent"]() {
       this.clickedButton = "next";
-      this.canNavigateAway && this.$store.questionnaire.goToNextItem();
-      setTimeout(() => this.clickedButton = null, 150);
+      if (this.$store.questionnaire.questionnaireIsComplete) {
+        this.canNavigateAway && this.$store.navigation.goToPage("results");
+      } else {
+        this.canNavigateAway && this.$store.questionnaire.goToNextItem();
+        setTimeout(() => this.clickedButton = null, 150);
+      }
     },
 
     [":class"]() {

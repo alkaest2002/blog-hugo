@@ -1,4 +1,5 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
+import { compressString } from "../usables/useCompressDecompress";
 
 const stateFn = () => [
   ["items", []],
@@ -43,6 +44,10 @@ export default (Alpine) => ({
 
   get questionnaireIsComplete() {
     return this.answers.length === this.items.length;
+  },
+
+  get compressedAnswers() {
+    return compressString(this.answers.map(({answerValue}) => answerValue));
   },
 
   get typeWithCoherenceValue() {
