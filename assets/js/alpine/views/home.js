@@ -6,7 +6,7 @@ export default () => ({
     const urlResults = `${urlBase}kts/results`;
     const items = await fetch(urlItems).then(res => res.json());
     this.$store.questionnaire.setItems(items);
-    this.$store.navigation.setUrl({ urlBase, urlResults })
+    this.$store.url.setUrl({ urlBase, urlResults })
   },
 
 });

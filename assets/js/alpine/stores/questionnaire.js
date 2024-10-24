@@ -34,6 +34,10 @@ export default (Alpine) => ({
     return this.items[this.currentItemIndex]
   },
 
+  get isLastItem() {
+    return this.currentItemIndex === this.items.length -1;
+  },
+
   get currentAnswer() {
     return this.answers[this.currentItemIndex]
   },
@@ -42,7 +46,7 @@ export default (Alpine) => ({
     return this.currentAnswer?.answerValue;
   },
 
-  get questionnaireIsComplete() {
+  get isComplete() {
     return this.answers.length === this.items.length;
   },
 
@@ -77,7 +81,9 @@ export default (Alpine) => ({
     const latency = previousLatency + answerlatency;
     const dimension = this.currentItem.options[answerValue].dimension;
     this.answers.splice(this.currentItemIndex, 1, { answerValue, dimension, latency });
+    // reset counts
     this.dimensions = stateFn().at(-1).at(-1);
+    // re-compute counts
     Object.values(this.answers).forEach(el => {
       this.dimensions.counts[el.dimension] += 1;
       this.dimensions.latencies[el.dimension] += el.latency;
