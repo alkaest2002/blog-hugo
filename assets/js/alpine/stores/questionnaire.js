@@ -1,5 +1,5 @@
 import { initState, wipeState } from "../usables/useAlpineStore";
-import { compressString } from "../usables/useCompressDecompress";
+import { compressString, decompressString } from "../usables/useCompressDecompress";
 
 const stateFn = () => [
   ["items", []],
@@ -51,7 +51,9 @@ export default (Alpine) => ({
   },
 
   get compressedAnswers() {
-    return compressString(this.answers.map(({answerValue}) => answerValue));
+    const answers = this.answers.map(({answerValue}) => answerValue).join("");
+    const compressedAnswers = compressString(answers);
+    return compressedAnswers;
   },
 
   get typeWithCoherenceValue() {
