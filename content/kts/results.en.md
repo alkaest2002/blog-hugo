@@ -2,4 +2,4 @@
 title: Results
 layout: results
 ---
-Results text
+{{< base/lorem count=2 >}}
